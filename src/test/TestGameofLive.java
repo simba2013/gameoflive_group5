@@ -44,6 +44,13 @@ public class TestGameofLive {
 		assertEquals(3, aliveNeighbor);
 	}
 	
+	/**
+	 * checking human outof panel has no neighbor
+	 */
+	@Test
+	public void countNeighborWhenHumanOut(){
+		assertEquals(0, lu.neighbourAliveCheck(humanOutPanel));
+	}
 	
 	@After
 	public void tearDown(){
