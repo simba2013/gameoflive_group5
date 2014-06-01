@@ -41,6 +41,27 @@ public class LifeUtil {
 		return count;
 	}
 
-	
+	public int decideWhetherToLive(Human human) {
+		int env = neighbourAliveCheck(human);
+		// we use the number of alive neighbors to determin whether to live in
+		// next ground
+		if (human.getAlive() == 1) {
+			if (env == 2 || env == 3) {
+				human.setAlive(1);
+				return 1;
+			} else {
+				human.setAlive(0);
+				return 0;
+			}
+		} else {
+			if (env == 3) {
+				human.setAlive(1);
+				return 1;
+			} else {
+				human.setAlive(0);
+				return 0;
+			}
+		}
+	}
 
 }

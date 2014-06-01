@@ -52,6 +52,24 @@ public class TestGameofLive {
 		assertEquals(0, lu.neighbourAliveCheck(humanOutPanel));
 	}
 	
+	/**
+	 * checking if the function decideWhetherToLive() can make sure a human is alive or not
+	 */
+	@Test
+	public void testWhetherToLive() {
+		assertEquals(1, lu.decideWhetherToLive(human));
+	}
+	
+	/**
+	 * show dead if a human is out of panel
+	 */
+	@Test
+	public void showDeadWhenHumanOut(){
+		assertEquals(0, lu.decideWhetherToLive(humanOutPanel));
+	}
+	
+
+	
 	@After
 	public void tearDown(){
 		System.out.println("--------------------Test Ending--------------------");
